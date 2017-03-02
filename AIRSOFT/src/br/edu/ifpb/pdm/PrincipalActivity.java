@@ -33,7 +33,7 @@ public class PrincipalActivity extends Activity {
 		final List<Usuario> list = new ArrayList(l.getUsuarios());
 
 		Contatos c = new Contatos();
-		List<Usuario> us = new ArrayList();
+		List<Usuario> us = new ArrayList(l.getUsuarios());
 		c.setUsuarios(us);
 
 		login.setOnClickListener(new OnClickListener() {
@@ -48,21 +48,31 @@ public class PrincipalActivity extends Activity {
 
 				TextView tv = (TextView) findViewById(R.id.texto);
 
-				for (int i = 0; i < list.size(); i++) {
-					if (list.get(i).getEmail().equals(emaild) && list.get(i).getSenha().equals(senhad)) {
-						Intent intent = new Intent(PrincipalActivity.this, MainActivity.class);
-						startActivity(intent);
-					} else {
-						Intent intent = new Intent(PrincipalActivity.this, PrincipalActivity.class);
-						startActivity(intent);
-						tv.setText("login ou senha inválida");
-						Toast.makeText(PrincipalActivity.this, "Acesso negado!", Toast.LENGTH_LONG).show();
-					}
+				boolean v1 = verificar(list, emaild, senhad);
+
+				if (v1 == true) {
+					Intent i = new Intent(PrincipalActivity.this, MainActivity.class);
+					startActivity(i);
+				} else {
+					Toast.makeText(PrincipalActivity.this, "Acesso negado!", Toast.LENGTH_LONG).show();
 				}
 
 			}
 
 		});
+		
+
+	}
+
+	public boolean verificar(List<Usuario> list, String emaild, String senhad) {
+
+		for (int i = 0; i < list.size(); i++) {
+			if ((list.get(i).getEmail().equals(emaild)) && (list.get(i).getSenha().equals(senhad))) {
+				i = list.size();
+				return true;
+			}
+		}
+		return false;
 
 	}
 }
