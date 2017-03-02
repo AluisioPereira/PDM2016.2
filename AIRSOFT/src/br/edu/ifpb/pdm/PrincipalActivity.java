@@ -52,6 +52,7 @@ public class PrincipalActivity extends Activity {
 
 				if (v1 == true) {
 					Intent i = new Intent(PrincipalActivity.this, MainActivity.class);
+					i.putExtra("nome", emaild);
 					startActivity(i);
 				} else {
 					Toast.makeText(PrincipalActivity.this, "Acesso negado!", Toast.LENGTH_LONG).show();
