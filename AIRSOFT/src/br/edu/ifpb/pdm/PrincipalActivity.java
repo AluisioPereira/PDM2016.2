@@ -22,19 +22,16 @@ public class PrincipalActivity extends Activity {
 
 		final Button login = (Button) findViewById(R.id.btnAcessar);
 
-		Usuario u1 = new Usuario("aluisio", "aluisio");
-		Usuario u2 = new Usuario("ari", "ari");
-		Usuario u3 = new Usuario("user3", "user3");
+		Usuario u1 = new Usuario("aluisio","aluisio@gmail.com", "aluisio");
+		Usuario u2 = new Usuario("ari", "ari@gmail.com", "ari");
+		Usuario u3 = new Usuario("user3","user3@gmail.com", "user3");
 
 		Logins l = new Logins();
 		l.addUsuario(u1);
 		l.addUsuario(u2);
 		l.addUsuario(u3);
 		final List<Usuario> list = new ArrayList(l.getUsuarios());
-
-		Contatos c = new Contatos();
-		List<Usuario> us = new ArrayList(l.getUsuarios());
-		c.setUsuarios(us);
+		
 
 		login.setOnClickListener(new OnClickListener() {
 

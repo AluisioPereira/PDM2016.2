@@ -4,17 +4,18 @@ import java.util.Random;
 
 public class Usuario {
 	private int id;
+	private String nome;
 	private String email;
-	
 	private String senha;
 
-	public Usuario(String email, String senha) {
+	public Usuario(String nome, String email, String senha) {
 		Random ran = new Random();
-		this.id=ran.nextInt(1001);
+		this.id = ran.nextInt(1001);
+		this.setNome(nome);
 		this.email = email;
 		this.senha = senha;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -22,7 +23,14 @@ public class Usuario {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public String getEmail() {
 		return email;
@@ -44,13 +52,14 @@ public class Usuario {
 		this.email = "";
 		this.senha = "";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + id;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		return result;
 	}
@@ -71,6 +80,11 @@ public class Usuario {
 			return false;
 		if (id != other.id)
 			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
 		if (senha == null) {
 			if (other.senha != null)
 				return false;
@@ -79,6 +93,4 @@ public class Usuario {
 		return true;
 	}
 
-
-	
 }

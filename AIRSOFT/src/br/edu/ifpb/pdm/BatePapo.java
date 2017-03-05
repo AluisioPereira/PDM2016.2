@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BatePapo {
 	private int id;
-	private List<Contatos> contatos;
+	private List<Contato> contatos;
 
 	public BatePapo() {
 	}
@@ -17,19 +17,19 @@ public class BatePapo {
 		this.id = id;
 	}
 
-	public List<Contatos> getContatos() {
+	public List<Contato> getContatos() {
 		return contatos;
 	}
 
-	public void setContatos(List<Contatos> contatos) {
+	public void setContatos(List<Contato> contatos) {
 		this.contatos = contatos;
 	}
 
-	public void addContato(Contatos c) {
+	public void addContato(Contato c) {
 		contatos.add(c);
 	}
 
-	public void removeContato(Contatos c) {
+	public void removeContato(Contato c) {
 		contatos.remove(c);
 	}
 

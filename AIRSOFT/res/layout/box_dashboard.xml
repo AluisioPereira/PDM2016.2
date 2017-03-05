@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#55000000"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal" >
 
         <Button
+            android:id="@+id/tab_chat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00000000"
-            android:text="@string/btn_chat"
-            android:id="@+id/tab_chat"/>
+            android:text="@string/btn_chat" />
 
         <Button
+            android:id="@+id/tab_missions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#55888888"
-            android:text="@string/btn_missions"
-            android:id="@+id/tab_missions"/>
-
+            android:text="@string/btn_missions" />
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#55888888">
+        android:background="#55888888" >
 
         <!-- Tab: Bate-Papo -->
+
         <LinearLayout
             android:id="@+id/tab_frame_chat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone" >
 
             <!-- Conteúdo da aba Bate-Papo aqui -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Abriu aqui"/>
+            
+            <include layout="@layout/lista_contato" />
+            <include layout="@layout/contato" />
 
+            
         </LinearLayout>
 
         <!-- Tab: Missão -->
+
         <LinearLayout
             android:id="@+id/tab_frame_missions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <!-- Conteúdo da aba Missão aqui -->
 
@@ -63,69 +63,64 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical" >
 
                 <Button
+                    android:id="@+id/button01"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/btn_new_mission"
-                    android:id="@+id/button01"
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_work"
                     android:lines="4"
-                    android:paddingTop="25dp"/>
-                
+                    android:paddingTop="25dp"
+                    android:text="@string/btn_new_mission" />
+
                 <Button
+                    android:id="@+id/button02"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/btn_old_mission"
-                    android:id="@+id/button02"
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_work_check"
                     android:lines="4"
                     android:paddingTop="25dp"
-                    android:singleLine="false"                                       
-                    />
-<!--android:forceHasOverlappingRendering="false"-->
-               
+                    android:singleLine="false"
+                    android:text="@string/btn_old_mission" />
+                <!-- android:forceHasOverlappingRendering="false" -->
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical" >
 
                 <Button
+                    android:id="@+id/button03"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/btn_settings"
-                    android:id="@+id/button03"
                     android:background="#00000000"
-                    android:drawableTop="@mipmap/ic_settings"                    
+                    android:drawableTop="@mipmap/ic_settings"
                     android:lines="4"
-                    android:paddingTop="25dp"/>
+                    android:paddingTop="25dp"
+                    android:text="@string/btn_settings" />
                 <!-- android:elegantTextHeight="true" -->
 
                 <Button
+                    android:id="@+id/button4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/btn_gallery"
-                    android:id="@+id/button4"
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_view_quilt"
                     android:lines="4"
-                    android:paddingTop="25dp"/>
-
+                    android:paddingTop="25dp"
+                    android:text="@string/btn_gallery" />
             </LinearLayout>
-
         </LinearLayout>
-
     </FrameLayout>
-
 
 </LinearLayout>
