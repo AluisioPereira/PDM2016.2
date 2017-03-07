@@ -27,10 +27,10 @@ public class ListaAdapterContato extends ArrayAdapter<Contato> {
 		ImageView imgView = (ImageView) convertView.findViewById(R.id.imageView001);
 		imgView.setImageResource(contatoPosicao.getImagem());		
 
-		TextView textDescricao = (TextView) convertView.findViewById(R.id.textView001);
+		TextView textDescricao = (TextView) convertView.findViewById(R.id.textView002);
 		textDescricao.setText(contatoPosicao.getDescricao());
 		
-		TextView textView = (TextView) convertView.findViewById(R.id.textView002);
+		TextView textView = (TextView) convertView.findViewById(R.id.textView001);
 		textView.setText(contatoPosicao.getUsuario().getNome());
 		
 		return convertView;
