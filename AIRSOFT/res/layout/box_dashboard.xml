@@ -74,7 +74,8 @@
                     android:drawableTop="@mipmap/ic_work"
                     android:lines="4"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_new_mission" />
+                    android:text="@string/btn_new_mission" 
+                    android:onClick="clicarNovaMissao"/>
 
                 <Button
                     android:id="@+id/button02"
@@ -86,7 +87,8 @@
                     android:lines="4"
                     android:paddingTop="25dp"
                     android:singleLine="false"
-                    android:text="@string/btn_old_mission" />
+                    android:text="@string/btn_old_mission" 
+                    android:onClick="clicarMissaoAnterior"/>
                 <!-- android:forceHasOverlappingRendering="false" -->
 
             </LinearLayout>
@@ -106,7 +108,8 @@
                     android:drawableTop="@mipmap/ic_settings"
                     android:lines="4"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_settings" />
+                    android:text="@string/btn_settings" 
+                    android:onClick="clicarConfiguracao"/>
                 <!-- android:elegantTextHeight="true" -->
 
                 <Button
@@ -118,7 +121,8 @@
                     android:drawableTop="@mipmap/ic_view_quilt"
                     android:lines="4"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_gallery" />
+                    android:text="@string/btn_gallery" 
+                    android:onClick="clicarGaleriaFotos"/>
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnItemClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class MainActivity extends Activity {
 		ListaAdapterContato  adapterContatos = new ListaAdapterContato(this, listacontato);
 		ListView listView0 = (ListView) findViewById(R.id.listView001);
 		listView0.setAdapter(adapterContatos);	
+		listView0.setOnItemClickListener(this);
 		
 		
 		
@@ -74,5 +78,31 @@ public class MainActivity extends Activity {
 			}
 		});
 
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		
+		Intent i = new Intent(this, BatePapoActivity.class);
+		i.putExtra("posicao:", position);
+		startActivity(i);
+
+	}
+
+	public void clicarNovaMissao(View view) {
+		Toast.makeText(this, "Ambiente de NOVA MISSÃO em desenvolvimento!", Toast.LENGTH_LONG).show();
+	
+	}
+	public void clicarMissaoAnterior(View view) {
+		Toast.makeText(this, "Ambiente de MISSÕES ANTERIORES em desenvolvimento!", Toast.LENGTH_LONG).show();
+	
+	}
+	public void clicarConfiguracao(View view) {
+		Toast.makeText(this, "Ambiente de CONFIGURAÇÕES em desenvolvimento!", Toast.LENGTH_LONG).show();
+	
+	}
+	public void clicarGaleriaFotos(View view) {
+		Toast.makeText(this, "Ambiente de GALERIA DE FOTOS em desenvolvimento!", Toast.LENGTH_LONG).show();
+	
 	}
 }

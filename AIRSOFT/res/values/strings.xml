@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">AIRSOFT</string>
@@ -7,5 +8,9 @@
     <string name="btn_old_mission">Missões Anteriores</string>
     <string name="btn_settings">Configurações</string>
     <string name="btn_gallery">Galeria de Fotos</string>
+    <string name="title_activity_bate_papo">Bate Papo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="messagemDesenvolvimento">Ambiente em desenvolvimento!</string>
 
 </resources>
