@@ -1,8 +1,13 @@
 package br.edu.ifpb.pdm;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Usuario {
+public class Usuario implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3736480821112085193L;
 	private int id;
 	private String nome;
 	private String email;

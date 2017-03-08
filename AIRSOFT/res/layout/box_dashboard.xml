@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#55000000"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -15,16 +14,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#00000000"
-            android:text="@string/btn_chat" />
+            android:background="#55000000"
+            android:text="@string/btn_chat"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/tab_missions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#55888888"
-            android:text="@string/btn_missions" />
+            android:background="#9C9C9C"
+            android:text="@string/btn_missions"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <FrameLayout
@@ -42,11 +43,10 @@
             android:visibility="gone" >
 
             <!-- Conteúdo da aba Bate-Papo aqui -->
-            
-            <include layout="@layout/lista_contato" />
-            <include layout="@layout/contato" />
 
-            
+            <include layout="@layout/lista_contato" />
+
+            <include layout="@layout/contato" />
         </LinearLayout>
 
         <!-- Tab: Missão -->
@@ -73,9 +73,10 @@
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_work"
                     android:lines="4"
+                    android:onClick="clicarNovaMissao"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_new_mission" 
-                    android:onClick="clicarNovaMissao"/>
+                    android:text="@string/btn_new_mission"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/button02"
@@ -85,10 +86,11 @@
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_work_check"
                     android:lines="4"
+                    android:onClick="clicarMissaoAnterior"
                     android:paddingTop="25dp"
                     android:singleLine="false"
-                    android:text="@string/btn_old_mission" 
-                    android:onClick="clicarMissaoAnterior"/>
+                    android:text="@string/btn_old_mission"
+                    android:textColor="#FFFFFF" />
                 <!-- android:forceHasOverlappingRendering="false" -->
 
             </LinearLayout>
@@ -107,9 +109,10 @@
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_settings"
                     android:lines="4"
+                    android:onClick="clicarConfiguracao"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_settings" 
-                    android:onClick="clicarConfiguracao"/>
+                    android:text="@string/btn_settings"
+                    android:textColor="#FFFFFF" />
                 <!-- android:elegantTextHeight="true" -->
 
                 <Button
@@ -120,9 +123,10 @@
                     android:background="#00000000"
                     android:drawableTop="@mipmap/ic_view_quilt"
                     android:lines="4"
+                    android:onClick="clicarGaleriaFotos"
                     android:paddingTop="25dp"
-                    android:text="@string/btn_gallery" 
-                    android:onClick="clicarGaleriaFotos"/>
+                    android:text="@string/btn_gallery"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

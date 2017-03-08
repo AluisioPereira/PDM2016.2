@@ -1,6 +1,12 @@
 package br.edu.ifpb.pdm;
 
-public class Contato {
+import java.io.Serializable;
+
+public class Contato implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8740846303936561198L;
 	private int imagem;
 	private String descricao;
 	private Usuario usuario;

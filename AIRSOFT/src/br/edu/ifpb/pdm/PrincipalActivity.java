@@ -22,19 +22,18 @@ public class PrincipalActivity extends Activity {
 
 		final Button login = (Button) findViewById(R.id.btnAcessar);
 
-		Usuario u1 = new Usuario("aluisio","aluisio@gmail.com", "aluisio");
-		Usuario u2 = new Usuario("ari", "ari@gmail.com", "ari");
-		Usuario u3 = new Usuario("user3","user3@gmail.com", "user3");
-
+		Usuario u1 = new Usuario("Aluísio", "aluisio@gmail.com", "aluisio");
+		Usuario u2 = new Usuario("Aristofanio", "ari@gmail.com", "ari");
+		Usuario u3 = new Usuario("Outro", "outro@gmail.com", "outro");
+		
 		Logins l = new Logins();
 		l.addUsuario(u1);
 		l.addUsuario(u2);
 		l.addUsuario(u3);
 		final List<Usuario> list = new ArrayList(l.getUsuarios());
 		
-
 		login.setOnClickListener(new OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 				EditText emailc = (EditText) findViewById(R.id.email);
@@ -45,32 +44,32 @@ public class PrincipalActivity extends Activity {
 
 				TextView tv = (TextView) findViewById(R.id.texto);
 
-				boolean v1 = verificar(list, emaild, senhad);
 
-				if (v1 == true) {
+				Usuario u1 = verificarUser(list, emaild, senhad);
+
+				if (u1 != null) {
 					Intent i = new Intent(PrincipalActivity.this, MainActivity.class);
-					i.putExtra("nome", emaild);
+					i.putExtra("usuarioLogado", u1);
 					startActivity(i);
 				} else {
 					Toast.makeText(PrincipalActivity.this, "Acesso negado!", Toast.LENGTH_LONG).show();
-				}
-
+				}	
+				
 			}
-
 		});
-		
+
+
 
 	}
 
-	public boolean verificar(List<Usuario> list, String emaild, String senhad) {
+	public Usuario verificarUser(List<Usuario> list, String emaild, String senhad) {
 
 		for (int i = 0; i < list.size(); i++) {
 			if ((list.get(i).getEmail().equals(emaild)) && (list.get(i).getSenha().equals(senhad))) {
-				i = list.size();
-				return true;
+				return list.get(i);
 			}
 		}
-		return false;
+		return null;
 
 	}
 }

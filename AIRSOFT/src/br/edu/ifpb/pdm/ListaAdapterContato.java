@@ -36,5 +36,10 @@ public class ListaAdapterContato extends ArrayAdapter<Contato> {
 		return convertView;
 
 	}
+	
+	@Override
+    public Contato getItem(int position) {
+        return contatos.get(position);
+    }
 
 }
